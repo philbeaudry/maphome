@@ -1,1 +1,39 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>MapHome</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.1/"></script>
+
+    <script> 
+        require([
+          "esri/views/MapView",
+          "esri/WebMap",
+          "dojo/domReady!"
+        ], function(
+          MapView, WebMap
+        ) {
+            //For 1 map
+            var map1 = new WebMap({
+                portalItem: {
+                id: "22af0e5d2fa143d7a8f375a394891d67"
+                }
+            });
+            var view1 = new MapView({
+                map: map1,
+                container: "viewDiv"
+            });
+            //for second map
+            var map2 = new WebMap({
+                portalItem: {
+                    id: "f4ca4ed352344217b2264051fb667efb"
+                }
+            });
+            var view2 = new MapView({
+                map: map2,
+                container: "map"
+            });      
+        });
